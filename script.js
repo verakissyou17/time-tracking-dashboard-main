@@ -9,11 +9,17 @@ const previousDisplay = document.querySelectorAll('.previous-hour-display');
 
 function requestData() {
   fetch(url)
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(data => {
     arr.push(...data);
+    return arr;
   })
-  .catch(error => alert('Error:', error));
+  .catch(error => console.log('Error:', error));
 };
 
 requestData();
@@ -56,6 +62,8 @@ function addMonth(data) {
   monthly.addEventListener('click',() =>  {
     addMonth(arr);
   });
+
+
 
 
 

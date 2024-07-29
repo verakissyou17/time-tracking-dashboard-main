@@ -23,6 +23,8 @@ function addDay(data) {
     hourDisplay[index].textContent = `${element.timeframes.daily.current} hrs`;
     previousDisplay[index].textContent = `Last week - ${element.timeframes.daily.previous} hrs`;
   });
+  weekly.classList.remove('selected');
+  return data;
 };
 
 function addWeek(data) {
@@ -30,6 +32,7 @@ function addWeek(data) {
     hourDisplay[index].textContent = `${element.timeframes.weekly.current} hrs`;
     previousDisplay[index].textContent = `Last week - ${element.timeframes.weekly.previous} hrs`;
   });
+  return data;
 }
 
 
@@ -38,6 +41,8 @@ function addMonth(data) {
     hourDisplay[index].textContent = `${element.timeframes.monthly.current} hrs`;
     previousDisplay[index].textContent = `Last week - ${element.timeframes.monthly.previous} hrs`;
   });
+  weekly.classList.remove('selected');
+  return data;
 }
 
   daily.addEventListener('click',() =>  {

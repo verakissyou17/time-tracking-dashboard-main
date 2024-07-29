@@ -228,11 +228,18 @@ article:hover {
 .nav--list > li > a:focus {
     font-weight: 500;
     color: var(--color-neutral-pale-blue);
+    outline: none;
+    border: none;
 }
 
 .nav--list > li > a:hover {
     font-weight: 500;
     color: var(--color-neutral-pale-blue);
+}
+
+.selected {
+    font-weight: 500!important;
+    color: var(--color-neutral-pale-blue)!important;
 }
 
 .attribution { 
